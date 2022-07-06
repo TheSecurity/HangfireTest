@@ -1,0 +1,11 @@
+services: 
+  api: 
+    build: HangfireTest.Api/.
+    links: 
+      - database
+  database: 
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment: 
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=ABCabc123
+      - MSSQL_PID=Developer

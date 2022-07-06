@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["HangfireTest/HangfireTest.Api.csproj", "HangfireTest/"]
-RUN dotnet restore "HangfireTest/HangfireTest.Api.csproj"
+COPY ["HangfireTest.Api/HangfireTest.Api.csproj", "HangfireTest.Api/"]
+RUN dotnet restore "HangfireTest.Api/HangfireTest.Api.csproj"
 COPY . .
-WORKDIR "/src/HangfireTest"
+WORKDIR "/src/HangfireTest.Api"
 RUN dotnet build "HangfireTest.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish

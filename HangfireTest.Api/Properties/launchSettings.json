@@ -4,19 +4,19 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:19695",
-      "sslPort": 44328
+      "applicationUrl": "http://localhost:8466",
+      "sslPort": 44311
     }
   },
   "profiles": {
-    "HangfireTest": {
+    "HangfireTest.Api": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "https://localhost:7086;http://localhost:5086",
+      "applicationUrl": "https://localhost:7034;http://localhost:5034",
       "dotnetRunMessages": true
     },
     "IIS Express": {

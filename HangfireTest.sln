@@ -5,7 +5,12 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HangfireTest.Data", "HangfireTest.Data\HangfireTest.Data.csproj", "{82AEBAB5-9469-473F-940C-3DB5E4769FA6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HangfireTest.Api", "HangfireTest.Api\HangfireTest.Api.csproj", "{A9D5ED19-B314-43A6-9A8F-297A5311BA37}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B3F3C0F9-5481-4520-8836-31ECF8093274}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangfireTest.Api", "HangfireTest.Api\HangfireTest.Api.csproj", "{70DE072C-3430-476B-96B2-F6E82F7A1EE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +22,10 @@ Global
 		{82AEBAB5-9469-473F-940C-3DB5E4769FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82AEBAB5-9469-473F-940C-3DB5E4769FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82AEBAB5-9469-473F-940C-3DB5E4769FA6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9D5ED19-B314-43A6-9A8F-297A5311BA37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9D5ED19-B314-43A6-9A8F-297A5311BA37}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9D5ED19-B314-43A6-9A8F-297A5311BA37}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9D5ED19-B314-43A6-9A8F-297A5311BA37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70DE072C-3430-476B-96B2-F6E82F7A1EE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70DE072C-3430-476B-96B2-F6E82F7A1EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70DE072C-3430-476B-96B2-F6E82F7A1EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70DE072C-3430-476B-96B2-F6E82F7A1EE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
