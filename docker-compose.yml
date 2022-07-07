@@ -1,11 +1,21 @@
 services: 
   api: 
-    build: HangfireTest.Api/.
-    links: 
+    build:
+      dockerfile: HangfireTest.Api/Dockerfile
+      context: ./
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+      - ASPNETCORE_URLS=${ASPNETCORE_URLS}
+    links:
       - database
+    ports:
+      - 5001:5001
+      - 5002:5002
   database: 
     image: mcr.microsoft.com/mssql/server:2022-latest
     environment: 
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=ABCabc123
-      - MSSQL_PID=Developer
+      - ACCEPT_EULA=${ACCEPT_EULA}
+      - SA_PASSWORD=${SA_PASSWORD}
+      - MSSQL_PID=${MSSQL_PID}
+    ports:
+      - 1433:1433

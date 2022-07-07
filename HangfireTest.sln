@@ -8,9 +8,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B3F3C0F9-5481-4520-8836-31ECF8093274}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
+		.env.development = .env.development
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangfireTest.Api", "HangfireTest.Api\HangfireTest.Api.csproj", "{70DE072C-3430-476B-96B2-F6E82F7A1EE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HangfireTest.Api", "HangfireTest.Api\HangfireTest.Api.csproj", "{70DE072C-3430-476B-96B2-F6E82F7A1EE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

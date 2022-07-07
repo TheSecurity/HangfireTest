@@ -2,12 +2,11 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["HangfireTest.Api/HangfireTest.Api.csproj", "HangfireTest.Api/"]
+COPY ["../HangfireTest.Api/HangfireTest.Api.csproj", "HangfireTest.Api/"]
+COPY ["../HangfireTest.Data/HangfireTest.Data.csproj", "HangfireTest.Data/"]
 RUN dotnet restore "HangfireTest.Api/HangfireTest.Api.csproj"
 COPY . .
 WORKDIR "/src/HangfireTest.Api"

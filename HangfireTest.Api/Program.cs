@@ -1,6 +1,7 @@
 using Hangfire;
 using Hangfire.SqlServer;
 using HangfireTest.Api;
+using HangfireTest.Api.Filters;
 using HangfireTest.Api.Services;
 using HangfireTest.Data;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Configuration.AddEnvironmentVariables();
+
+Console.WriteLine("Running in environment configuration: " + builder.Environment.EnvironmentName);
 
 var connectionString = builder.Configuration.GetConnectionString("Database");
 builder.Services.AddDbContext<ApplicationDbContext>(opt
@@ -36,13 +40,17 @@ GlobalJobFilters.Filters.Add(new AutomaticRetryAttribute { Attempts = 3 });
 builder.Services.AddHangfireServer();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<JobFactory>();
+
 var app = builder.Build();
 
-app.UseHangfireDashboard();
+app.UseHangfireDashboard("/hangfire", new DashboardOptions
+{
+    Authorization = new[] {new DashboardAuthFilter()} 
+});
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    Console.WriteLine("Enabling Swagger");
     app.UseSwagger();
     app.UseSwaggerUI();
 }
@@ -59,10 +67,8 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
 app.UseRouting();
+app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
 {
@@ -70,5 +76,4 @@ app.UseEndpoints(endpoints =>
 });
 
 app.MapControllers();
-
 app.Run();
